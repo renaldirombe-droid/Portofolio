@@ -137,11 +137,8 @@
   .cert-body .btn{margin-top:auto;align-self:flex-start}
 
   /* ---------- Projects ---------- */
-  .project{padding:24px 0;border-top:1px solid var(--border);display:grid;grid-template-columns:140px 1fr;gap:24px}
+  .project{padding:24px 0;border-top:1px solid var(--border)}
   .project:first-child{border-top:none;padding-top:0}
-  .project.no-media{grid-template-columns:1fr}
-  .project-thumb{width:100%;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);align-self:start}
-  .project-thumb img{width:100%;height:100%;object-fit:cover}
   .project h3{font-size:1.1rem}
   .project .proj-purpose{color:var(--muted);margin-top:6px;max-width:70ch}
   .project dl{margin-top:14px;display:flex;flex-direction:column;gap:8px;font-size:.93rem}
@@ -149,10 +146,10 @@
   .project dt{color:var(--muted);flex:0 0 110px}
   .project dd{max-width:60ch}
   .project .proj-links{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
-  @media (max-width:640px){
-    .project{grid-template-columns:1fr}
-    .project-thumb{max-width:160px}
-  }
+  .proj-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;max-width:520px}
+  .proj-gallery a{aspect-ratio:3/4;background:#f3f4f6;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .proj-gallery img{width:100%;height:100%;object-fit:contain}
+  @media (max-width:480px){.proj-gallery{max-width:360px;gap:8px}}
 
   /* ---------- Contact ---------- */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
@@ -395,12 +392,19 @@
         <h2 class="sec-title">Proyek</h2>
       </div>
       <article class="project">
-        <div class="project-thumb">
-          <img src="assets/projects/toraja-app.webp" alt="Tampilan aplikasi TorajaCarvingAI untuk identifikasi motif ukiran Toraja" loading="lazy" width="320" height="480">
-        </div>
-        <div>
         <h3>Klasifikasi Motif Ukiran Toraja — MobileNetV2 (Tugas Akhir)</h3>
         <p class="proj-purpose">Aplikasi Android untuk klasifikasi motif ukiran tradisional Toraja secara on-device, guna mendukung identifikasi dan pelestarian warisan budaya Toraja.</p>
+        <div class="proj-gallery">
+          <a href="assets/projects/toraja/scan-result.webp" target="_blank" rel="noopener noreferrer">
+            <img src="assets/projects/toraja/scan-result.webp" alt="Hasil identifikasi motif ukiran Toraja pada aplikasi" loading="lazy" width="420" height="464">
+          </a>
+          <a href="assets/projects/toraja/home-screen.webp" target="_blank" rel="noopener noreferrer">
+            <img src="assets/projects/toraja/home-screen.webp" alt="Halaman utama aplikasi TorajaCarvingAI" loading="lazy" width="410" height="615">
+          </a>
+          <a href="assets/projects/toraja/admin-panel.webp" target="_blank" rel="noopener noreferrer">
+            <img src="assets/projects/toraja/admin-panel.webp" alt="Panel admin pengelolaan data motif TorajaCarvingAI" loading="lazy" width="480" height="270">
+          </a>
+        </div>
         <dl>
           <div><dt>Teknologi</dt><dd>Android (Kotlin), TensorFlow Lite, MobileNetV2, Python</dd></div>
           <div><dt>Kontribusi</dt><dd>Mengumpulkan dataset gambar motif ukiran langsung di lapangan, melatih model MobileNetV2 secara mandiri, mengonversi ke TFLite, dan mengembangkan aplikasi Android sebagai wadah implementasinya.</dd></div>
@@ -409,9 +413,8 @@
         <div class="proj-links">
           <a class="btn btn-secondary btn-sm" href="https://github.com/renaldirombe-droid/TorajaCarvingAI" target="_blank" rel="noopener noreferrer">Lihat Repository</a>
         </div>
-        </div>
       </article>
-      <article class="project no-media">
+      <article class="project">
         <h3>Portofolio Pribadi — Web Portofolio Profesional &amp; Ringan</h3>
         <p class="proj-purpose">Situs portofolio pribadi untuk menampilkan pengalaman, sertifikasi, dan proyek kepada perekrut.</p>
         <dl>
