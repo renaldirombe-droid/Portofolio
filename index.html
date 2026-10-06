@@ -81,10 +81,17 @@
 
   /* ---------- Hero ---------- */
   .hero{padding:72px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
   .hero-role{color:var(--accent);font-weight:600;font-size:1.05rem;margin-top:10px}
   .hero h1{font-size:clamp(1.8rem,4vw,2.4rem)}
   .hero p{color:var(--muted);max-width:62ch;margin-top:16px;font-size:1.05rem}
   .hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+  .hero-photo{width:100%;max-width:260px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .hero-photo{order:-1;max-width:180px}
+  }
 
   /* ---------- About ---------- */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
@@ -130,15 +137,22 @@
   .cert-body .btn{margin-top:auto;align-self:flex-start}
 
   /* ---------- Projects ---------- */
-  .project{padding:24px 0;border-top:1px solid var(--border)}
+  .project{padding:24px 0;border-top:1px solid var(--border);display:grid;grid-template-columns:140px 1fr;gap:24px}
   .project:first-child{border-top:none;padding-top:0}
+  .project.no-media{grid-template-columns:1fr}
+  .project-thumb{width:100%;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);align-self:start}
+  .project-thumb img{width:100%;height:100%;object-fit:cover}
   .project h3{font-size:1.1rem}
   .project .proj-purpose{color:var(--muted);margin-top:6px;max-width:70ch}
   .project dl{margin-top:14px;display:flex;flex-direction:column;gap:8px;font-size:.93rem}
   .project dl div{display:flex;gap:8px}
   .project dt{color:var(--muted);flex:0 0 110px}
   .project dd{max-width:60ch}
-  .project .proj-links{margin-top:14px}
+  .project .proj-links{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+  @media (max-width:640px){
+    .project{grid-template-columns:1fr}
+    .project-thumb{max-width:160px}
+  }
 
   /* ---------- Contact ---------- */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
@@ -189,13 +203,18 @@
 <main id="top">
 
   <section class="hero">
-    <div class="wrap">
-      <div class="hero-role">IT Support &amp; Network Engineer</div>
-      <h1>Petrus Renaldi Rombe</h1>
-      <p>Lulusan S1 Teknik Informatika yang fokus pada pengelolaan, konfigurasi, dan pemeliharaan infrastruktur jaringan. Berpengalaman pada proyek enterprise bersama PT Telkom Indonesia (Kemenag &amp; Dukcapil), dengan kemampuan pendukung Software Development (Web/App).</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#proyek">Lihat Proyek</a>
-        <a class="btn btn-secondary" href="assets/cv/petrus-renaldi-rombe-cv.pdf" download="Petrus_Renaldi_Rombe_CV.pdf">Download CV</a>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-role">IT Support &amp; Network Engineer</div>
+        <h1>Petrus Renaldi Rombe</h1>
+        <p>Lulusan S1 Teknik Informatika yang fokus pada pengelolaan, konfigurasi, dan pemeliharaan infrastruktur jaringan. Berpengalaman pada proyek enterprise bersama PT Telkom Indonesia (Kemenag &amp; Dukcapil), dengan kemampuan pendukung Software Development (Web/App).</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#proyek">Lihat Proyek</a>
+          <a class="btn btn-secondary" href="assets/cv/petrus-renaldi-rombe-cv.pdf" download="Petrus_Renaldi_Rombe_CV.pdf">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/profile/petrus-foto.webp" alt="Foto Petrus Renaldi Rombe" width="640" height="961">
       </div>
     </div>
   </section>
@@ -376,6 +395,10 @@
         <h2 class="sec-title">Proyek</h2>
       </div>
       <article class="project">
+        <div class="project-thumb">
+          <img src="assets/projects/toraja-app.webp" alt="Tampilan aplikasi TorajaCarvingAI untuk identifikasi motif ukiran Toraja" loading="lazy" width="320" height="480">
+        </div>
+        <div>
         <h3>Klasifikasi Motif Ukiran Toraja — MobileNetV2 (Tugas Akhir)</h3>
         <p class="proj-purpose">Aplikasi Android untuk klasifikasi motif ukiran tradisional Toraja secara on-device, guna mendukung identifikasi dan pelestarian warisan budaya Toraja.</p>
         <dl>
@@ -385,6 +408,19 @@
         </dl>
         <div class="proj-links">
           <a class="btn btn-secondary btn-sm" href="https://github.com/renaldirombe-droid/TorajaCarvingAI" target="_blank" rel="noopener noreferrer">Lihat Repository</a>
+        </div>
+        </div>
+      </article>
+      <article class="project no-media">
+        <h3>Portofolio Pribadi — Web Portofolio Profesional &amp; Ringan</h3>
+        <p class="proj-purpose">Situs portofolio pribadi untuk menampilkan pengalaman, sertifikasi, dan proyek kepada perekrut.</p>
+        <dl>
+          <div><dt>Teknologi</dt><dd>HTML, CSS, JavaScript (vanilla)</dd></div>
+          <div><dt>Kontribusi</dt><dd>Merancang struktur &amp; konten berdasarkan CV, membangun tampilan responsif, dan mengoptimalkan performa pemuatan halaman.</dd></div>
+        </dl>
+        <div class="proj-links">
+          <a class="btn btn-secondary btn-sm" href="https://renaldirombe-droid.github.io/Portofolio/" target="_blank" rel="noopener noreferrer">Lihat Demo</a>
+          <a class="btn btn-secondary btn-sm" href="https://github.com/renaldirombe-droid/Portofolio" target="_blank" rel="noopener noreferrer">Lihat Repository</a>
         </div>
       </article>
     </div>
