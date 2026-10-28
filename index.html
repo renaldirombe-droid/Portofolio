@@ -113,6 +113,10 @@
   .tl-item ul{display:flex;flex-direction:column;gap:6px;max-width:72ch}
   .tl-item li{position:relative;padding-left:16px;color:var(--text);font-size:.97rem}
   .tl-item li::before{content:"–";position:absolute;left:0;color:var(--muted)}
+  .tl-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px;max-width:72ch}
+  .tl-gallery a{display:block;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#f3f4f6}
+  .tl-gallery img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
+  @media (max-width:640px){.tl-gallery{grid-template-columns:repeat(2,1fr)}}
 
   /* ---------- Skills ---------- */
   .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px}
@@ -268,6 +272,12 @@
             <li>Menyusun dokumentasi instalasi &amp; konfigurasi sebagai bahan pelaporan dan arsip.</li>
             <li>Berkontribusi pada proyek strategis nasional digitalisasi tata kelola untuk mendukung layanan jaringan instansi pemerintah.</li>
           </ul>
+          <div class="tl-gallery">
+            <a href="assets/kerja/kemenag-tator-1.webp" target="_blank" rel="noopener"><img src="assets/kerja/kemenag-tator-1.webp" alt="Perangkat jaringan di rack server Kemenag Tana Toraja: Cisco, FortiGate, dan switch PoE TP-Link Omada" loading="lazy"></a>
+            <a href="assets/kerja/kemenag-tator-2.webp" target="_blank" rel="noopener"><img src="assets/kerja/kemenag-tator-2.webp" alt="Pemasangan access point di area tangga Kantor Kemenag Tana Toraja" loading="lazy"></a>
+            <a href="assets/kerja/kemenag-tator-3.webp" target="_blank" rel="noopener"><img src="assets/kerja/kemenag-tator-3.webp" alt="Pengerjaan rack kabinet jaringan dan penataan kabel di Kemenag Tana Toraja" loading="lazy"></a>
+            <a href="assets/kerja/kemenag-tator-4.webp" target="_blank" rel="noopener"><img src="assets/kerja/kemenag-tator-4.webp" alt="Pemasangan access point di ruang Penyelenggara Zakat dan Wakaf, Kemenag Tana Toraja" loading="lazy"></a>
+          </div>
         </article>
         <article class="tl-item">
           <div class="tl-head">
@@ -408,6 +418,7 @@
             </dl>
             <div class="proj-links">
               <a class="btn btn-secondary btn-sm" href="https://github.com/renaldirombe-droid/TorajaCarvingAI" target="_blank" rel="noopener noreferrer">Lihat Repository</a>
+              <a class="btn btn-secondary btn-sm" href="assets/dokumen/draft-skripsi-mobilenetv2-toraja.pdf" target="_blank" rel="noopener noreferrer">Draft Skripsi (PDF)</a>
             </div>
           </div>
           <div class="proj-gallery">
